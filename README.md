@@ -6,7 +6,7 @@ An AI-powered tax research tool that answers U.S. federal tax questions with cit
 
 ## Live Demo
 
-[Coming soon — deploying to Streamlit Cloud]
+[🔗 taxi-research-assistant.streamlit.app](https://taxi-research-assistant.streamlit.app)
 
 ---
 
