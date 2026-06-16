@@ -43,13 +43,13 @@ print("Connecting to ChromaDB...")
 _chroma_client = chromadb.PersistentClient(path=str(DB_DIR))
 _collection = _chroma_client.get_collection(COLLECTION_NAME)
 
-print("Connecting to Claude API...")
-try:
-    import streamlit as st
-    api_key = st.secrets.get("ANTHROPIC_API_KEY") or os.getenv("ANTHROPIC_API_KEY")
-except Exception:
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-_claude_client = anthropic.Anthropic(api_key=api_key)
+_claude_client = None
+
+def _get_claude_client():
+    global _claude_client
+    if _claude_client is None:
+        _claude_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    return _claude_client
 
 print("RAG system ready.\n")
 
@@ -159,7 +159,7 @@ Based ONLY on the IRS publications above, please answer this question:
 {question}"""
 
     # Step 4: Send to Claude
-    response = _claude_client.messages.create(
+    response = _get_claude_client().messages.create(
         model=MODEL,
         max_tokens=1500,
         messages=[
