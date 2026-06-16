@@ -1,4 +1,4 @@
-# ⚖️ TaxAI Research Assistant
+# TaxAI Research Assistant
 
 An AI-powered tax research tool that answers U.S. federal tax questions with cited answers sourced directly from official IRS publications. Built using RAG (Retrieval-Augmented Generation) architecture.
 
@@ -6,7 +6,7 @@ An AI-powered tax research tool that answers U.S. federal tax questions with cit
 
 ## Live Demo
 
-🔗 [Coming soon — deploying to Streamlit Cloud]
+[Coming soon — deploying to Streamlit Cloud]
 
 ---
 
@@ -129,4 +129,4 @@ For research and educational purposes only. Not a substitute for professional ta
 
 ---
 
-*Built by Devin Dillon — Summer 2025 Portfolio Project*
+*Built by Devin Dillon — Accounting Student at the University at Buffalo*
