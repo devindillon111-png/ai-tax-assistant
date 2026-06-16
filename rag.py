@@ -27,7 +27,7 @@ load_dotenv()
 DB_DIR = Path("db")
 COLLECTION_NAME = "irs_docs"
 TOP_K = 5            # How many chunks to retrieve per question
-MODEL = "claude-opus-4-5"  # Claude model to use
+MODEL = "claude-opus-4-8"  # Claude model to use
 
 
 # ─────────────────────────────────────────────────────────
