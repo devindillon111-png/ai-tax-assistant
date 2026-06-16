@@ -4,8 +4,16 @@ app.py — Streamlit Web Interface
 Run with:  streamlit run app.py
 """
 
+import os
 import streamlit as st
 from pathlib import Path
+
+# Inject API key from Streamlit secrets into env before rag.py loads
+try:
+    if "ANTHROPIC_API_KEY" in st.secrets:
+        os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
+except Exception:
+    pass
 
 # ─────────────────────────────────────────────────────────
 # PAGE CONFIG
