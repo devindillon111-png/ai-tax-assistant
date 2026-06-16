@@ -1,0 +1,21 @@
+# Secret — never commit
+.env
+.env.*
+
+# Downloaded PDFs (large, re-downloadable)
+data/
+
+# ChromaDB vector database (large, re-generatable)
+db/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Virtual environments
+venv/
+.venv/
