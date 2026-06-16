@@ -300,7 +300,7 @@ with right:
             result = rag.answer_question(question)
 
         st.markdown('<div class="answer-box">', unsafe_allow_html=True)
-        st.markdown(result["answer"])
+        st.markdown(result["answer"].replace("$", r"\$"))
         st.markdown('</div>', unsafe_allow_html=True)
 
         if result["sources"]:
