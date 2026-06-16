@@ -299,7 +299,9 @@ with right:
         with st.spinner("Searching IRS publications..."):
             result = rag.answer_question(question)
 
-        st.markdown(f'<div class="answer-box">{result["answer"]}</div>', unsafe_allow_html=True)
+        st.markdown('<div class="answer-box">', unsafe_allow_html=True)
+        st.markdown(result["answer"])
+        st.markdown('</div>', unsafe_allow_html=True)
 
         if result["sources"]:
             source_items = "".join([
