@@ -44,7 +44,12 @@ _chroma_client = chromadb.PersistentClient(path=str(DB_DIR))
 _collection = _chroma_client.get_collection(COLLECTION_NAME)
 
 print("Connecting to Claude API...")
-_claude_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+try:
+    import streamlit as st
+    api_key = st.secrets.get("ANTHROPIC_API_KEY") or os.getenv("ANTHROPIC_API_KEY")
+except Exception:
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+_claude_client = anthropic.Anthropic(api_key=api_key)
 
 print("RAG system ready.\n")
 
